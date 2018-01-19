@@ -11,7 +11,8 @@ var connection = mysql.createConnection({
     user: 'dhruw',
     password: 'dhruw123',
     port: '3306',
-    database: 'edureka'
+    database: 'edureka',
+    acquireTimeout: 1000000
 });
 
 var server = new Hapi.Server();
