@@ -29,7 +29,7 @@ server.register(require('vision'), function(err) {
         method: 'GET',
         path: '/',
         handler: function(request, reply) {
-            connection.query('SELECT quote,credit from quotes order by rand() limit 1', function(err, rows, fields) {
+            connection.query('SELECT quote, credit from quotes order by rand() limit 1', function(err, rows, fields) {
                 if (err) throw err;
                 reply.view('index', { quote: rows[0].quote, credit: rows[0].credit });
             });
